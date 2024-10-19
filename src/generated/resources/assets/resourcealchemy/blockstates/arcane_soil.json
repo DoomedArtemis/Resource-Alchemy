@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "moisture=0": {
+      "model": "resourcealchemy:block/arcane_soil"
+    },
+    "moisture=1": {
+      "model": "resourcealchemy:block/arcane_soil"
+    },
+    "moisture=2": {
+      "model": "resourcealchemy:block/arcane_soil"
+    },
+    "moisture=3": {
+      "model": "resourcealchemy:block/arcane_soil"
+    },
+    "moisture=4": {
+      "model": "resourcealchemy:block/arcane_soil"
+    },
+    "moisture=5": {
+      "model": "resourcealchemy:block/arcane_soil"
+    },
+    "moisture=6": {
+      "model": "resourcealchemy:block/arcane_soil"
+    },
+    "moisture=7": {
+      "model": "resourcealchemy:block/arcane_soil_moist"
+    }
+  }
+}

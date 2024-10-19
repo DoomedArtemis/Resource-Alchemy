@@ -1,0 +1,4 @@
+// 1.21.1	2024-10-19T11:27:39.3891098	Registries
+6473bee30720e5ed00d84f2fc517873990a96429 data/resourcealchemy/neoforge/biome_modifier/add_arcane_ore.json
+08aa39be4fb714ed7df3d13db86387465f80b6c7 data/resourcealchemy/worldgen/configured_feature/arcane_ore.json
+92a6f6defd45a00e3dc146f3926b32a5954b5809 data/resourcealchemy/worldgen/placed_feature/arcane_ore_placed.json
