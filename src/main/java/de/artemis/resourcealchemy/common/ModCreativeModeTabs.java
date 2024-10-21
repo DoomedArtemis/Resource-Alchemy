@@ -24,6 +24,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ARCANE_CRYSTAL_POWDER);
                         output.accept(ModBlocks.ARCANE_ORE);
                         output.accept(ModBlocks.DEEPSLATE_ARCANE_ORE);
+                        output.accept(ModBlocks.ARCANE_CRYSTAL_BLOCK);
+                        output.accept(ModBlocks.BUDDING_ARCANE_CRYSTAL);
+                        output.accept(ModBlocks.SMALL_ARCANE_CRYSTAL_BUD);
+                        output.accept(ModBlocks.MEDIUM_ARCANE_CRYSTAL_BUD);
+                        output.accept(ModBlocks.LARGE_ARCANE_CRYSTAL_BUD);
+                        output.accept(ModBlocks.ARCANE_CRYSTAL_CLUSTER);
                     }).build());
 
     public static void register(IEventBus eventBus) {

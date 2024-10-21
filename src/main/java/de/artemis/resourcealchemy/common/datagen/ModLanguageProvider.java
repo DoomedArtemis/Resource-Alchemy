@@ -5,9 +5,9 @@ import de.artemis.resourcealchemy.common.registration.ModBlocks;
 import de.artemis.resourcealchemy.common.registration.ModItems;
 import net.minecraft.data.PackOutput;
 
-public class LanguageProvider extends net.neoforged.neoforge.common.data.LanguageProvider {
+public class ModLanguageProvider extends net.neoforged.neoforge.common.data.LanguageProvider {
 
-    public LanguageProvider(PackOutput output, String locale) {
+    public ModLanguageProvider(PackOutput output, String locale) {
         super(output, ResourceAlchemy.MODID, locale);
     }
 
@@ -25,5 +25,11 @@ public class LanguageProvider extends net.neoforged.neoforge.common.data.Languag
         add(ModBlocks.ARCANE_SOIL.get(), "Arcane Soil");
         add(ModBlocks.ARCANE_ORE.get(), "Arcane Ore");
         add(ModBlocks.DEEPSLATE_ARCANE_ORE.get(), "Deepslate Arcane Ore");
+        add(ModBlocks.ARCANE_CRYSTAL_BLOCK.get(), "Arcane Crystal Block");
+        add(ModBlocks.BUDDING_ARCANE_CRYSTAL.get(), "Budding Arcane Crystal");
+        add(ModBlocks.ARCANE_CRYSTAL_CLUSTER.get(), "Arcane Crystal Cluster");
+        add(ModBlocks.SMALL_ARCANE_CRYSTAL_BUD.get(), "Small Arcane Crystal Bud");
+        add(ModBlocks.MEDIUM_ARCANE_CRYSTAL_BUD.get(), "Medium Arcane Crystal Bud");
+        add(ModBlocks.LARGE_ARCANE_CRYSTAL_BUD.get(), "Large Arcane Crystal Bud");
     }
 }

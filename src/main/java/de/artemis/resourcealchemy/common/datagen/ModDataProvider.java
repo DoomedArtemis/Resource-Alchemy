@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 @EventBusSubscriber(modid = ResourceAlchemy.MODID, bus = EventBusSubscriber.Bus.MOD)
-public class DataProvider {
+public class ModDataProvider {
 
     @SubscribeEvent
     public static void gatherData(GatherDataEvent event) {
@@ -28,19 +28,19 @@ public class DataProvider {
         CompletableFuture<HolderLookup.Provider> lookupProvider = event.getLookupProvider();
 
         generator.addProvider(event.includeServer(), new LootTableProvider(packOutput, Collections.emptySet(),
-                List.of(new LootTableProvider.SubProviderEntry(BlockLootTablesProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
+                List.of(new LootTableProvider.SubProviderEntry(ModBlockLootTablesProvider::new, LootContextParamSets.BLOCK)), lookupProvider));
 
-        TagsProvider.BlockTagProvider blockTagProvider = new TagsProvider.BlockTagProvider(packOutput, lookupProvider, existingFileHelper);
+        ModTagsProvider.BlockTagProvider blockTagProvider = new ModTagsProvider.BlockTagProvider(packOutput, lookupProvider, existingFileHelper);
         generator.addProvider(event.includeServer(), blockTagProvider);
-        generator.addProvider(event.includeServer(), new TagsProvider.ItemTagProvider(packOutput, lookupProvider, blockTagProvider.contentsGetter(), existingFileHelper));
+        generator.addProvider(event.includeServer(), new ModTagsProvider.ItemTagProvider(packOutput, lookupProvider, blockTagProvider.contentsGetter(), existingFileHelper));
 
-        generator.addProvider(event.includeClient(), new LanguageProvider(packOutput, "en_us"));
-        generator.addProvider(event.includeClient(), new ItemModelProvider(packOutput, existingFileHelper));
-        generator.addProvider(event.includeClient(), new ModelAndBlockStateProvider(packOutput, existingFileHelper));
+        generator.addProvider(event.includeClient(), new ModLanguageProvider(packOutput, "en_us"));
+        generator.addProvider(event.includeClient(), new ModItemModelProvider(packOutput, existingFileHelper));
+        generator.addProvider(event.includeClient(), new ModModelAndBlockStateProvider(packOutput, existingFileHelper));
 
-        generator.addProvider(event.includeServer(), new RecipeProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), new ModRecipeProvider(packOutput, lookupProvider));
 
-        generator.addProvider(event.includeServer(), new WorldGenProvider(packOutput, lookupProvider));
+        generator.addProvider(event.includeServer(), new ModWorldGenProvider(packOutput, lookupProvider));
     }
 
     @SuppressWarnings("deprecation")

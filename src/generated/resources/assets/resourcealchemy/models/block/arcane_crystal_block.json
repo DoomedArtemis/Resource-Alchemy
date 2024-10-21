@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "resourcealchemy:block/arcane_crystal_block"
+  }
+}

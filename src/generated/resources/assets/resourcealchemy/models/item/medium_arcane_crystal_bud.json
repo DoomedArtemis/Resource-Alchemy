@@ -1,0 +1,6 @@
+{
+  "parent": "resourcealchemy:generation/arcane_crystal_bud",
+  "textures": {
+    "texture": "resourcealchemy:block/medium_arcane_crystal_bud"
+  }
+}

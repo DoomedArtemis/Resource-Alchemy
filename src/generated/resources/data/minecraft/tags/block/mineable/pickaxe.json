@@ -1,6 +1,12 @@
 {
   "values": [
     "resourcealchemy:arcane_ore",
-    "resourcealchemy:deepslate_arcane_ore"
+    "resourcealchemy:deepslate_arcane_ore",
+    "resourcealchemy:arcane_crystal_block",
+    "resourcealchemy:budding_arcane_crystal",
+    "resourcealchemy:arcane_crystal_cluster",
+    "resourcealchemy:large_arcane_crystal_bud",
+    "resourcealchemy:medium_arcane_crystal_bud",
+    "resourcealchemy:small_arcane_crystal_bud"
   ]
 }

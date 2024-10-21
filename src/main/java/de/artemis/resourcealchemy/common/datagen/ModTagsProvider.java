@@ -16,7 +16,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
-public class TagsProvider {
+public class ModTagsProvider {
 
      public static class BlockTagProvider extends BlockTagsProvider {
 
@@ -28,7 +28,7 @@ public class TagsProvider {
          protected void addTags(HolderLookup.@NotNull Provider provider) {
 
              tag(ModTags.Block.ARCANE_CROPS_GROW_ON).add(ModBlocks.ARCANE_SOIL.get()).add(Blocks.FARMLAND);
-             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.ARCANE_ORE.get()).add(ModBlocks.DEEPSLATE_ARCANE_ORE.get());
+             tag(BlockTags.MINEABLE_WITH_PICKAXE).add(ModBlocks.ARCANE_ORE.get()).add(ModBlocks.DEEPSLATE_ARCANE_ORE.get()).add(ModBlocks.ARCANE_CRYSTAL_BLOCK.get()).add(ModBlocks.BUDDING_ARCANE_CRYSTAL.get()).add(ModBlocks.ARCANE_CRYSTAL_CLUSTER.get()).add(ModBlocks.LARGE_ARCANE_CRYSTAL_BUD.get()).add(ModBlocks.MEDIUM_ARCANE_CRYSTAL_BUD.get()).add(ModBlocks.SMALL_ARCANE_CRYSTAL_BUD.get());
 
          }
      }

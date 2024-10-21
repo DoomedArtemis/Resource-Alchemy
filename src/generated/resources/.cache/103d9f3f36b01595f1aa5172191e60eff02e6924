@@ -1,4 +1,7 @@
-// 1.21.1	2024-10-19T11:27:39.3891098	Registries
+// 1.21.1	2024-10-21T19:49:13.7694556	Registries
+82d7c6b4d0524d3a2d0e448beaf9a711776ef59d data/resourcealchemy/neoforge/biome_modifier/add_arcane_crystal_geode.json
 6473bee30720e5ed00d84f2fc517873990a96429 data/resourcealchemy/neoforge/biome_modifier/add_arcane_ore.json
+2979d2fd35a5c302c6c71c457d9965b3c36ec48d data/resourcealchemy/worldgen/configured_feature/arcane_crystal_geode.json
 08aa39be4fb714ed7df3d13db86387465f80b6c7 data/resourcealchemy/worldgen/configured_feature/arcane_ore.json
+1729ffd06097fd8be1e81efc6916fa068b525e10 data/resourcealchemy/worldgen/placed_feature/arcane_crystal_geode_placed.json
 92a6f6defd45a00e3dc146f3926b32a5954b5809 data/resourcealchemy/worldgen/placed_feature/arcane_ore_placed.json

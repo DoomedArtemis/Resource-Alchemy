@@ -13,8 +13,8 @@ import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import static de.artemis.resourcealchemy.common.blocks.ArcaneSoilBlock.MOISTURE;
 import static de.artemis.resourcealchemy.common.blocks.BlossomCropBlock.AGE;
 
-public class ModelAndBlockStateProvider extends BlockStateProvider {
-    public ModelAndBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
+public class ModModelAndBlockStateProvider extends BlockStateProvider {
+    public ModModelAndBlockStateProvider(PackOutput output, ExistingFileHelper exFileHelper) {
         super(output, ResourceAlchemy.MODID, exFileHelper);
     }
 
@@ -27,20 +27,27 @@ public class ModelAndBlockStateProvider extends BlockStateProvider {
 
         simpleBlock(ModBlocks.ARCANE_ORE.get());
         simpleBlock(ModBlocks.DEEPSLATE_ARCANE_ORE.get());
+        simpleBlock(ModBlocks.ARCANE_CRYSTAL_BLOCK.get());
+        simpleBlock(ModBlocks.BUDDING_ARCANE_CRYSTAL.get());
+
+        crossBlock(ModBlocks.ARCANE_CRYSTAL_CLUSTER.get(), ResourceLocation.fromNamespaceAndPath(ResourceAlchemy.MODID, "block/arcane_crystal_cluster"));
+        crossBlock(ModBlocks.LARGE_ARCANE_CRYSTAL_BUD.get(), ResourceLocation.fromNamespaceAndPath(ResourceAlchemy.MODID, "block/large_arcane_crystal_bud"));
+        crossBlock(ModBlocks.MEDIUM_ARCANE_CRYSTAL_BUD.get(), ResourceLocation.fromNamespaceAndPath(ResourceAlchemy.MODID, "block/medium_arcane_crystal_bud"));
+        crossBlock(ModBlocks.SMALL_ARCANE_CRYSTAL_BUD.get(), ResourceLocation.fromNamespaceAndPath(ResourceAlchemy.MODID, "block/small_arcane_crystal_bud"));
     }
 
     public void cropBlockMaxStageFive(Block block, ResourceLocation texture) {
-        ModelFile crop_stage_0 = models().withExistingParent(DataProvider.getRegistryName(block.asItem()) + "_stage_0",
+        ModelFile crop_stage_0 = models().withExistingParent(ModDataProvider.getRegistryName(block.asItem()) + "_stage_0",
                 ResourceLocation.withDefaultNamespace("block/cross")).renderType("cutout").texture("cross", texture + "_0");
-        ModelFile crop_stage_1 = models().withExistingParent(DataProvider.getRegistryName(block.asItem()) + "_stage_1",
+        ModelFile crop_stage_1 = models().withExistingParent(ModDataProvider.getRegistryName(block.asItem()) + "_stage_1",
                 ResourceLocation.withDefaultNamespace("block/cross")).renderType("cutout").texture("cross", texture + "_1");
-        ModelFile crop_stage_2 = models().withExistingParent(DataProvider.getRegistryName(block.asItem()) + "_stage_2",
+        ModelFile crop_stage_2 = models().withExistingParent(ModDataProvider.getRegistryName(block.asItem()) + "_stage_2",
                 ResourceLocation.withDefaultNamespace("block/cross")).renderType("cutout").texture("cross", texture + "_2");
-        ModelFile crop_stage_3 = models().withExistingParent(DataProvider.getRegistryName(block.asItem()) + "_stage_3",
+        ModelFile crop_stage_3 = models().withExistingParent(ModDataProvider.getRegistryName(block.asItem()) + "_stage_3",
                 ResourceLocation.withDefaultNamespace("block/cross")).renderType("cutout").texture("cross", texture + "_3");
-        ModelFile crop_stage_4 = models().withExistingParent(DataProvider.getRegistryName(block.asItem()) + "_stage_4",
+        ModelFile crop_stage_4 = models().withExistingParent(ModDataProvider.getRegistryName(block.asItem()) + "_stage_4",
                 ResourceLocation.withDefaultNamespace("block/cross")).renderType("cutout").texture("cross", texture + "_4");
-        ModelFile crop_stage_5 = models().withExistingParent(DataProvider.getRegistryName(block.asItem()) + "_stage_5",
+        ModelFile crop_stage_5 = models().withExistingParent(ModDataProvider.getRegistryName(block.asItem()) + "_stage_5",
                 ResourceLocation.withDefaultNamespace("block/cross")).renderType("cutout").texture("cross", texture + "_5");
 
         cropBlockMaxStageFive(block, crop_stage_0, crop_stage_1, crop_stage_2, crop_stage_3, crop_stage_4, crop_stage_5);
@@ -62,9 +69,9 @@ public class ModelAndBlockStateProvider extends BlockStateProvider {
     }
 
     public void farmBlock(Block block, ResourceLocation texture_top, ResourceLocation texture_top_moist, ResourceLocation texture_side) {
-        ModelFile block_model = models().withExistingParent(DataProvider.getRegistryName(block.asItem()),
+        ModelFile block_model = models().withExistingParent(ModDataProvider.getRegistryName(block.asItem()),
                 ResourceLocation.withDefaultNamespace("block/template_farmland")).texture("dirt", texture_side).texture("top", texture_top);
-        ModelFile block_model_moist = models().withExistingParent(DataProvider.getRegistryName(block.asItem()) + "_moist",
+        ModelFile block_model_moist = models().withExistingParent(ModDataProvider.getRegistryName(block.asItem()) + "_moist",
                 ResourceLocation.withDefaultNamespace("block/template_farmland")).texture("dirt", texture_side).texture("top", texture_top_moist);
 
         farmBlock(block, block_model, block_model_moist);
@@ -76,5 +83,12 @@ public class ModelAndBlockStateProvider extends BlockStateProvider {
 
             return ConfiguredModel.builder().modelFile(finalModel).build();
         });
+    }
+
+    public void crossBlock(Block block, ResourceLocation texture) {
+        ModelFile block_model = models().withExistingParent(ModDataProvider.getRegistryName(block.asItem()),
+                ResourceLocation.withDefaultNamespace("block/cross")).renderType("cutout").texture("cross", texture);
+
+        directionalBlock(block, block_model);
     }
 }
